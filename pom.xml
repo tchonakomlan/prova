@@ -53,20 +53,9 @@
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
-		</dependency>
-       <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-<dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>31.1.0.redhat-00001</version>
-</dependency>       
+		</dependency>     
 	</dependencies>  
-    <scm>
-	    <connection>scm:git:https://toolbox.sia.eu/bitbucket/scm/fuff/provalog.git</connection>
-	    <developerConnection>scm:git:https://toolbox.sia.eu/bitbucket/scm/fuff/provalog.git</developerConnection>
-        <url>https://toolbox.sia.eu/bitbucket/scm/fuff/provalog</url>
-		<tag>tag5</tag>
-  	</scm>
+    <!--
   	<distributionManagement>
         <repository>
             <id>releases</id>
@@ -79,6 +68,7 @@
             <url>https://toolbox.sia.eu/artifactory/TOOLBOX-Snapshot</url>
         </snapshotRepository>
     </distributionManagement> 
+	-->
 <build>
   <plugins>
 	<plugin>
