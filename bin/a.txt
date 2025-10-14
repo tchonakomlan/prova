@@ -1,0 +1,20 @@
+push
+2024-04-05 15:43:10,722+0200 http-nio-8070-exec-12 INFO anonymous 937x128x5 1ewk8uq 193.254.223.58,10.58.33.21 /login.jsp [c.a.c.d.ldap.monitoring.TimedSupplier] Timed call for search with handler on baseDN: OU=SHP_Esterni,OU=Utenti,DC=office,DC=corp,DC=sia,DC=it, filter: (&(&(&(objectCategory=Person)(sAMAccountName=*))(|(accountExpires=0)(!(accountExpires=*))(accountExpires>=133567975336680000)))(sAMAccountName=papadopouloua)) took 92154ms
+Caused by: org.springframework.transaction.CannotCreateTransactionException: Could not create DirContext instance for transaction; nested exception is org.springframework.ldap.UncategorizedLdapException: Uncategorized exception occured during LDAP processing; nested exception is javax.naming.NamingException: LDAP response read timed out, timeout used: 10000 ms.
+        at org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManager.doBegin(ContextSourceTransactionManager.java:123)
+        at com.atlassian.crowd.directory.SpringLDAPConnector.pageSearchResults(SpringLDAPConnector.java:369)
+        at com.atlassian.crowd.directory.SpringLDAPConnector.searchEntities(SpringLDAPConnector.java:437)
+        at com.atlassian.crowd.directory.SpringLDAPConnector.searchUserObjects(SpringLDAPConnector.java:640)
+        at com.atlassian.crowd.directory.SpringLDAPConnector.findUserWithAttributesByName(SpringLDAPConnector.java:596)
+        at com.atlassian.crowd.directory.SpringLDAPConnector.findUserByName(SpringLDAPConnector.java:583)
+        at com.atlassian.crowd.directory.SpringLDAPConnector.authenticate(SpringLDAPConnector.java:1006)
+Caused by: org.springframework.ldap.UncategorizedLdapException: Uncategorized exception occured during LDAP processing; nested exception is javax.naming.NamingException: LDAP response read timed out, timeout used: 10000 ms.
+        at org.springframework.ldap.support.LdapUtils.convertLdapException(LdapUtils.java:228)
+        at org.springframework.ldap.core.support.AbstractContextSource.createContext(AbstractContextSource.java:355)
+        at org.springframework.ldap.core.support.AbstractContextSource.doGetContext(AbstractContextSource.java:139)
+        at org.springframework.ldap.core.support.AbstractContextSource.getReadWriteContext(AbstractContextSource.java:174)
+        at org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManagerDelegate.getNewHolder(ContextSourceTransactionManagerDelegate.java:96)
+Caused by: javax.naming.NamingException: LDAP response read timed out, timeout used: 10000 ms.
+
+
+cafa
